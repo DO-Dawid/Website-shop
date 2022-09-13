@@ -1,13 +1,592 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: spin 40s infinite;
+    background-color: #EEEDDE;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+    --text-color: #EEEDDE;
+    --menu-bg-color: #141E27;
+    --menu-hover-bg-color: #203239;
+    --menu-text-color: #EEEDDE;
+    --btn-color: #E0DDAA;
+    --main-color-sheme-hover: rgb(0, 132, 172);
+}
+/* ---  DIFFERENT SITES ---*/
+#home{
+    display: block;
+}
+#shop, #yourorder, #websitefunc, #contacthelp{
+    display: none;
+}
+/* --- MENU --- */
+/* Menu links */
+.menu{
+    position: fixed;
+    z-index: 997;
+}
+.menu-buttons{
+    width: 23rem;
+    background-color: var(--menu-bg-color);
+    height: 100vh;
+    padding-top: 140px;
+    transform: translateX(-23rem);
+    transition: 0.5s;
+}
+.menu-button{
+    width: 100%;
+}
+.menu-button button{
+    cursor: pointer;
+    width: 100%;
+    padding-block: 30px;
+    border:none;
+    background-color: var(--menu-bg-color);
+    transition: 0.2s;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--menu-text-color);
+}
+.menu-button button:hover{
+    background-color: var(--menu-hover-bg-color);
+    transform: scale(1.05);
+    letter-spacing: 3px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 6px;
+}
+.change .menu-buttons{
+    transform: translateX(0);
+}
+/* Menu button */
+#menu-main-button{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 57px;
+    padding: 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: var(--menu-bg-color);
+    position: fixed;
+    z-index: 998;
+    transition: 0.2s;
+}
+#menu-main-button:hover{
+    background-color: var(--menu-hover-bg-color);
+    box-shadow:rgb(0, 0, 0) 0px 0px 6px;
+}
+.bar1, .bar2, .bar3{
+    width: 24px;
+    height: 2px;
+    background-color: var(--menu-text-color);
+}
+.bar2, .bar3{
+    margin-top: 6px;
+}
+/* --- LOGIN POPUP --- */
+.login{
+    display: none;
+    background-color: #202020b9;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+}
+.login-window{
+    position: absolute;
+    background-color: var(--menu-text-color);
+    width: 30%;
+    height: 70%;
+    top:17%;
+    left: 37%;
+    border-radius: 20px;
+}
+#close-login-window-btn{
+    width: 60px;
+    height: 64px;
+    position: absolute;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#close-login-window-btn:hover{
+    transform: scale(1.2);
+    background-color: var(--menu-hover-bg-color);
+}
+.background-cross{
+    height: 20px;
+}
+.bar-cross1, .bar-cross2{
+    width: 40px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+}
+.bar-cross1{
+    transform: rotate(45deg);
+}
+.bar-cross2{
+    transform: rotate(-45deg);
+}
+.login-form-container{
+    position: relative;
+    width: 70%;
+    margin: auto;
+    margin-top: 120px;
+    text-align: center;
+    font-size: 25px;
+    z-index: 2;
+}
+.login-form-container input{
+    width: 100%;
+    margin-bottom: 25px;
+    border: none;
+    background-color:rgb(235, 235, 235);
+    padding: 13px;
+    border-radius: 14px;
+}
+.login-form-container img{
+    width: 50%;
+    border-radius: 100%;
+    margin: auto;
+    margin-bottom: 25px;
+}
+.login-form-container input:focus{
+    background-color: var(--btn-color);
+    transition: 0.5s;
+}
+.login-form-container button:hover{
+    background-color: var(--btn-color);
+}
+.change2 .login{
+    display: block;
+}
+/* --- Main Home ---*/
+#home{
+    width: 100%;
+}
+
+/* Slider */
+#slider{
+    width: 100%;
+    height: 740px;
+    overflow: hidden;
+}
+.slidy{
+    width: 500%;
+    height: 740px;
+    display: flex;
+}
+.slidy input{
+    display: none;
+}
+.slid{
+    width: 20%;
+    transition: 2s;
+    z-index: 4;
+}
+.slid img{
+    width: 100%;
+    height: 740px;
+    object-fit: cover;
+}
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 6;
+}
+.manual-btn{
+    border: 2px solid var(--menu-bg-color);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.checked {
+    background: var(--menu-bg-color);
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background: var(--main-color-sheme-hover);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+/* --- BESTSELLER --- */
+#bestseller, #about, #shop2{
+    width: 100%;
+    margin-top: 140px;
+}
+.two_box{
+    display: flex;
+    padding-inline:3%;
+    height: 600px;
+}
+.big_box{
+    z-index: 4;
+    width: 50%;
+    color: var(--text-color);
+    background-image: linear-gradient(to bottom right, var(--menu-hover-bg-color), var(--menu-bg-color));
+    border-radius:30% 70% 48% 52% / 28% 47% 53% 72%;
+}
+.big_box h1{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 100px;
+    margin-right: 240px;
+}
+.big_box p{
+    font-size: 20px;
+    margin-top: 50px;
+    padding-inline: 35px;
+}
+.big_box button{
+    margin-top: 70px;
+    margin-left: 42%;
+    border: none;
+    padding-inline:40px;
+    padding-block:20px ;
+    border-radius: 49% 51% 49% 51% / 52% 53% 47% 48%  ;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--menu-bg-color);
+    background-color: var(--btn-color);
+    transition: 0.2s;
+}
+.big_box button:hover{
+    transform: scale(1.2);
+    border-radius: 51% 49% 48% 52% / 26% 74% 26% 74%  ;
+}
+.img_box{
+    width: 50%;
+    z-index: 4;
+    
+}
+.img_box img{
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 51% 49% 48% 52% / 29% 74% 26% 71% ;
+}
+/* --- ABOUT --- */
+.triple_box{
+    width: 100%;
+    margin-top: 300px;
+    height: 600px;
+    display: flex;
+    margin:auto;
+}
+.box{
+    transition: 0.5s;
+    
+}
+.box p{
+    padding-inline: 40px;
+    color: white;
+    font-size: large;
+    line-height: 1.6;
+    letter-spacing: 1.4px;
+}
+.about-img{
+    width: 50%;
+    margin:auto;
+    padding-top: 70px;
+}
+.about-img img{
+    width: 100%;
+    border-radius: 30% 70% 48% 52% / 41% 48% 52% 59% ;
+}
+
+
+/* --- CUSTOM BORDER ---*/
+.custom1, .custom2, .custom3{
+    background-image: linear-gradient(to bottom right, var(--menu-hover-bg-color), var(--menu-bg-color));
+}
+.custom1{
+    border-radius: 61% 39% 74% 26% / 20% 48% 52% 80% ;
+    transition: 3s;
+}
+.custom2{
+    border-radius: 34% 66% 30% 70% / 62% 29% 71% 38% ;
+    transition: 3s;
+}
+.custom3{
+    border-radius: 53% 47% 74% 26% / 62% 69% 31% 38% ;
+}
+.box:hover{
+    animation: blob-anim 10s infinite ease;
+    transition: 2s;
+}
+
+/* --- SHOP --- */
+/* --- main page --- */
+.content-display{
+    display: flex;
+    flex-direction: column;
+}
+.dark-background-shop-main, .colour-background-shop-main{
+    z-index: 4;
+    height: 700px;
+    width: 100%;
+}
+.dark-background-shop-main{
+    background-color: var(--menu-bg-color);
+}
+.colour-background-shop-main{
+    background-color: var(--btn-color);
+}
+.help-container{
+    width: 80%;
+}
+.curve{
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    margin-top: 478px;
+}
+.curve::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: var(--btn-color);
+    transform: translate(85%, 60%);
+    z-index: 6;
+}
+.curve::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: var(--menu-bg-color);
+    transform: translate(-4%, 40%);
+    z-index: 5;
+}
+#shop2{
+    text-align: center;
+}
+#shop2 h1{
+    margin-top: 190px;
+    font-size: 50px;
+}
+#shop2 p{
+    font-size: 20px;
+    margin-bottom: 90px;
+}
+#shop2 button, .login-form-container button{
+    border: none;
+    padding-inline:40px;
+    padding-block:20px ;
+    border-radius: 49% 51% 49% 51% / 52% 53% 47% 48%  ;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    animation: blobs 15s ease-in-out infinite;
+}
+#shop2 button:hover{
+    transform: scale(1.2);
+}
+.dark-background-shop-main p, .dark-background-shop-main h1{
+    color: var(--menu-text-color);
+}
+.dark-background-shop-main button{
+    background-color: var(--btn-color);
+    color: var(--menu-bg-color);
+}
+.colour-background-shop-main button{
+    background-color: var(--menu-bg-color);
+    color: white;
+}
+.crystal-card{
+    z-index: 6;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: absolute;
+}
+
+/* --- footerbox --- */
+footer{
+    width: 100%;
+    color: rgb(79, 81, 102);
+}
+footer .curve{
+    margin-top: -231px;
+}
+footer .curve::after{
+    background-color:var(--btn-color);
+    z-index: 6;
+}
+footer .curve::before{
+    background-color: var(--menu-bg-color);
+    z-index: 6;
+}
+footer .about-img{
+    margin-top: 90px;
+}
+.footer-box{
+    z-index: 4;
+    background-color: var(--menu-bg-color);
+    padding-inline: 30px;
+}
+footer li{
+    font-size: 20px;
+}
+footer h1{
+    text-align: center;
+}
+
+
+/* WEBSITE FUNC */
+.main-func{
+    margin-block: 120px;
+    color: var(--menu-bg-color);
+}
+.main-func h1{
+    margin-bottom: 70px;
+    font-size: 50px;
+}
+.main-func h3{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.main-func p{
+    font-size: 20px;
+}
+#websitefunc span{
+    color: var(--menu-hover-bg-color);
+    text-decoration: underline;
+}
+.row{
+    
+}
+.bi-lightbulb-fill{
+    margin-top: 50px;
+    transition: 0.2s;
+    color: var(--menu-bg-color);
+}
+.bi-lightbulb-fill:hover{
+    color: var(--btn-color);
+    transition: 0.2s;
+}
+
+/* WEBSITE SHOP */
+.main-offers{
+    margin-bottom: 220px;
+}
+.main-offers-offer{
+    transition: 0.2s;
+}
+.main-offers-offer p{
+    margin-block:30px;
+}
+.main-offers-offer:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.shop-feature-title{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+#shop p{
+    font-size: 18px;
+}
+.background2{
+    height: 320px;
+}
+.bi-award, .bi-bookmarks, .bi-bookmark-heart{
+    margin-top: 280px;
+    color: var(--btn-color);
+}
+.shop-info{
+    margin-bottom: 220px;
+}
+.shop-button{
+    border: none;
+    padding-inline: 25px;
+    padding-block: 10px;
+    color: var(--text-color);
+    background-color: var(--menu-bg-color);
+    border-radius: 14px;
+    transition: 0.2s;
+}
+.shop-button:hover{
+    background-color: var(--menu-hover-bg-color);
+}
+.shop-info-text{
+    background-color: var(--menu-bg-color);
+    margin-top: 50px;
+    border-radius: 14px;
+    color: var(--text-color);
+    padding: 30px;
+}
+.bi-chevron-double-down{
+    animation: bounce 2s infinite;
+}
+
+
+
+
+
+
+
+/* --- Animations ---*/
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+}
+@keyframes blob-anim{
+    0%{}
+    25%{border-radius: 21% 79% 56% 44% / 51% 75% 25% 49% ;
+    transform: rotate(3deg);}
+    50%{border-radius: 46% 54% 56% 44% / 47% 75% 25% 53% ;
+        transform: rotate(-3deg);}
+    75%{border-radius: 67% 33% 84% 16% / 20% 75% 25% 80% ;}
+    100%{}
+}
+@keyframes blobs{
+	0%{border-radius:66% 34% 33% 67% / 65% 73% 27% 35%}
+	10%{border-radius:74% 26% 47% 53% / 68% 46% 54% 32%}
+	20%{border-radius:48% 52% 30% 70% / 27% 37% 63% 73%}
+	30%{border-radius:73% 27% 57% 43% / 28% 67% 33% 72%}
+	40%{border-radius:63% 37% 56% 44% / 25% 28% 72% 75%}
+	50%{border-radius:39% 61% 70% 30% / 61% 29% 71% 39%}
+	60%{border-radius:27% 73% 29% 71% / 73% 51% 49% 27%}
+	70%{border-radius:39% 61% 65% 35% / 74% 65% 35% 26%}
+	80%{border-radius:55% 45% 37% 63% / 38% 30% 70% 62%}
+	90%{border-radius:25% 75% 70% 30% / 39% 50% 50% 61%}
+	100%{border-radius:66% 34% 33% 67% / 65% 73% 27% 35%}
 }

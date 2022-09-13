@@ -1,0 +1,8 @@
+logowanie(jeżeli nie zalogowany) / moje konto(jeżeli zalogowany)
+strona główna
+sklep
+zamówienia (jeżeli nie ma zamówień przycisk znika)
+działanie naszej strony (na czerwono jeżeli użytkownik pierwszy raz na stronie, cookies)
+kontakt/pomoc
+
+Dodać działanie przycisków w menu

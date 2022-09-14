@@ -319,6 +319,7 @@ body{
 /* --- CUSTOM BORDER ---*/
 .custom1, .custom2, .custom3{
     background-image: linear-gradient(to bottom right, var(--menu-hover-bg-color), var(--menu-bg-color));
+    padding: 70px;
 }
 .custom1{
     border-radius: 61% 39% 74% 26% / 20% 48% 52% 80% ;
@@ -435,22 +436,10 @@ footer{
     width: 100%;
     color: rgb(79, 81, 102);
 }
-footer .curve{
-    margin-top: -231px;
-}
-footer .curve::after{
-    background-color:var(--btn-color);
-    z-index: 6;
-}
-footer .curve::before{
-    background-color: var(--menu-bg-color);
-    z-index: 6;
-}
 footer .about-img{
-    margin-top: 90px;
+    margin-block: 20px;
 }
 .footer-box{
-    z-index: 4;
     background-color: var(--menu-bg-color);
     padding-inline: 30px;
 }
@@ -460,6 +449,7 @@ footer li{
 footer h1{
     text-align: center;
 }
+
 
 
 /* WEBSITE FUNC */
@@ -549,8 +539,20 @@ footer h1{
 .bi-chevron-double-down{
     animation: bounce 2s infinite;
 }
-
-
+/* WEBSITE contact */
+.contact-form-background{
+    background-color: var(--btn-color);
+    box-shadow: 2px 2px 4px #000000;
+    border-radius: 13px;
+    padding: 40px;
+    margin-block:4em;
+}
+.fas{
+    transition: 0.2s;
+}
+.fas:hover{
+    color: var(--btn-color);
+}
 
 
 

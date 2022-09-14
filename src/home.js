@@ -45,20 +45,20 @@ export default function Home(){
                     </div>
                 </div>
                 <div id="about">
-                    <div className="triple_box">
-                        <div className="box custom1">
+                    <div className="row">
+                        <div className="col-lg-4 col-md-4 col-sm-12 custom1 box">
                             <div className="about-img">
                                 <img src="images/4.jpg"></img>
                             </div>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>
                         </div>
-                        <div className="box custom2">
+                        <div className="col-lg-4 col-md-4 col-sm-12 custom2 box">
                             <div className="about-img">
                                 <img src="images/4.jpg"></img>
                             </div>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>
                         </div>
-                        <div className="box custom3">
+                        <div className="col-lg-4 col-md-4 col-sm-12 custom3 box">
                             <div className="about-img">
                                 <img src="images/4.jpg"></img>
                             </div>

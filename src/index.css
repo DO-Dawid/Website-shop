@@ -235,13 +235,7 @@ body{
     width: 100%;
     margin-top: 140px;
 }
-.two_box{
-    display: flex;
-    padding-inline:3%;
-    height: 600px;
-}
 .big_box{
-    z-index: 4;
     width: 50%;
     color: var(--text-color);
     background-image: linear-gradient(to bottom right, var(--menu-hover-bg-color), var(--menu-bg-color));
@@ -274,11 +268,6 @@ body{
 .big_box button:hover{
     transform: scale(1.2);
     border-radius: 51% 49% 48% 52% / 26% 74% 26% 74%  ;
-}
-.img_box{
-    width: 50%;
-    z-index: 4;
-    
 }
 .img_box img{
     width: 100%;

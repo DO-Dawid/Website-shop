@@ -33,13 +33,13 @@ export default function Home(){
                     </div>
                 </div>
                 <div id="bestseller">
-                    <div className="two_box">
-                        <div className="big_box">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-12 big_box">
                             <h1>Best Seller</h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                             <button>See more</button>
                         </div>
-                        <div className="img_box">
+                        <div className="col-lg-6 col-md-6 col-sm-12 img_box">
                             <img src="images/7.jpg"></img>
                         </div>
                     </div>

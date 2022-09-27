@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function complicated_order(){
+export default function Complicated_order(){
     return(
         <div id="">
 

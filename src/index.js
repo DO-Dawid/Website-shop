@@ -9,6 +9,9 @@ import ContactHelp from "./contacthelp";
 import Footer from "./utils/footer";
 import Shop from "./shop"
 import Yourorders from "./yourorders"
+import Simple_order from "./utils/simple_order";
+import Complicated_order from "./utils/complicated_order";
+import Most_complicated_order from "./utils/most_complicated";
 
 function Page(){
     return (
@@ -16,10 +19,17 @@ function Page(){
             <Menu />
             <Login />
             <Home />
+
             <Shop />
+            
+            <Simple_order />
+            <Complicated_order />
+            <Most_complicated_order />
+
             <Yourorders />
             <WebsiteFunc />
             <ContactHelp />
+
             <Footer />
         </div>
     )

@@ -544,6 +544,21 @@ footer h1{
     color: var(--btn-color);
 }
 
+/* Orders */
+#simple_order{
+    display: absolute;
+    position: fixed;
+    background-color: #0000007a;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+}
+.background_order{
+    margin-top: 120px;
+    background-color: var(--text-color);
+    padding: 50px;
+}
+
 
 
 
